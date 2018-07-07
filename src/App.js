@@ -12,13 +12,11 @@ function playSound(e) {
   key.classList.add('playing');
   audio.currentTime = 0;
   audio.play().then(
-    setTimeout(function () {
+    setTimeout(function () {// this is to remove the css after playing the sound
       key.classList.remove('playing');
     }, 100)
   );
 }
-const keys = Array.from(document.querySelectorAll('.key'));
-keys.forEach(key => key.addEventListener('transitionend'));
 window.addEventListener('keydown', playSound);
 
 
